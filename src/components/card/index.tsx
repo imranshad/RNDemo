@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-interface CardProps {}
+interface CardProps {
+  data:{},
+  index:number
+}
 
 const Card = (props: CardProps) => {
   return (
@@ -14,5 +17,7 @@ const Card = (props: CardProps) => {
 export default Card;
 
 const styles = StyleSheet.create({
-  container: {}
+  container: {
+    
+  }
 });

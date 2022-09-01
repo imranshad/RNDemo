@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, SafeAreaView, FlatList } from 'react-native';
 import { Card, SearchBar } from '../../components';
-import { HeightPercent, WidthPercent } from '../../Utils/Helpers';
+import { demoData, HeightPercent, WidthPercent } from '../../Utils/Helpers';
 
 interface HomeScreenProps {}
 
@@ -12,7 +12,8 @@ const HomeScreen = (props: HomeScreenProps) => {
             <SearchBar />
             <View style={styles.feedContainer}>
                 <FlatList
-                    data={[]}
+                    showsVerticalScrollIndicator={false}
+                    data={demoData}
                     keyExtractor= {(item,index)=>"key"+index}
                     renderItem={({item,index})=><Card data={item} index={index}/>}
                 />
@@ -35,7 +36,6 @@ const styles = StyleSheet.create({
     paddingVertical: HeightPercent(20)
   },
   feedContainer: {
-    flex:1,
-    backgroundColor:"red"
+    flex:1
   }
 });
